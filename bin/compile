@@ -183,7 +183,7 @@ if [ -n "$BUILDPACK_PRELAUNCH_METEOR" ]; then
   # Remove the Android platform because it fails due to the Android tools not
   # being installed, but leave the iOS platform because it's ignored.
   METEOR remove-platform android || true
-  HOME=$METEOR_DIR timeout -s9 60 $METEOR_DIR/.meteor/meteor --settings settings.json || true
+  HOME=$METEOR_DIR timeout -s9 180 $METEOR_DIR/.meteor/meteor --settings settings.json || true
 fi
 
 # Now on to bundling. Don't put the bundle in $APP_CHECKOUT_DIR during
